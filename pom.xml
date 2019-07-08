@@ -8,15 +8,20 @@
 		<version>2.1.7.BUILD-SNAPSHOT</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+
 	<groupId>com.coditas</groupId>
 	<artifactId>SpringBatchDemo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+
 	<name>SpringBatchDemo</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
 		<java.version>1.8</java.version>
+		<start-class>com.coditas.SpringBatchDemo.SpringBatchDemoApplication</start-class>
 	</properties>
+
+
 
 	<dependencies>
 		<dependency>
@@ -49,11 +54,26 @@
 		</dependency>
 	</dependencies>
 
+
 	<build>
 		<plugins>
+
+							<!--<mainClass>com.coditas.SpringBatchDemo.SpringBatchDemoApplication</mainClass>-->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<fork>true</fork>
+					<mainClass>com.coditas.SpringBatchDemo.SpringBatchDemoApplication</mainClass>
+				</configuration>
+				<version>1.5.2.RELEASE</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
